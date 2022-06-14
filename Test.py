@@ -9,9 +9,9 @@ class Helper_Func(object):
 
     def DisplayOrder(obj):
         print("*******************")
-        print("Order No: ", obj.OrderNo) # Pulling the variable made from Ticket.py
+        print("Order No: ", obj.OrderNo)  # Pulling the variable made from Ticket.py
         print("ID: ", obj.ID)
-        print("Name: ", obj.Name)
+        print("Name: ", obj.name)
         print("Description of the issue: ", obj.Problem)
         print("Order Status: ", obj.Order_STATUS)
 
