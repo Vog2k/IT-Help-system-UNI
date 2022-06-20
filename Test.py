@@ -2,18 +2,18 @@ import datetime
 
 
 class Helper_Func(object):
-    """Class to make the system more readable"""
 
     def __init__(self):
         pass
 
-    def DisplayOrder(obj):
+    def Ticket_Iformation(obj):
         print("*******************")
         print("Order No: ", obj.OrderNo)  # Pulling the variable made from Ticket.py
+        print("Name: ", obj.Name)
         print("ID: ", obj.ID)
-        print("Name: ", obj.name)
+        print("Email: ", obj.Name, "@Whitecliffe.co.nz")
         print("Description of the issue: ", obj.Problem)
-        print("Order Status: ", obj.Order_STATUS)
+        print("Order Status: ", obj.Ticket_STATUS)
 
         if obj.Response != "N/A":
             print("Response: ", obj.Response)
@@ -25,12 +25,12 @@ class Helper_Func(object):
         timestamp_req = int(timestamp_req[0:3])
         OrderNo_req = int(Order.OrderNo)
         HEX_Token = Order.ID[0:2] + hex(OrderNo_req) + hex(timestamp_req)
-        Order.Response = "Your unique token is: " + HEX_Token
+        Order.Response = "Your ID is: " + HEX_Token
 
-        if Order.Order_STATUS == "Closed":
-            Order.Order_STATUS = "Reopened"
-        elif Order.Order_STATUS == "Open":
-            Order.Order_STATUS = "Closed"
+        if Order.Ticket_STATUS == "Closed":
+            Order.Ticket_STATUS = "Reopened"
+        elif Order.Ticket_STATUS == "Open":
+            Order.Ticket_STATUS = "Closed"
 
         return Order
 
