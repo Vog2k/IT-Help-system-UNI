@@ -108,7 +108,7 @@ while OPTION_FLAG != 0:  # Option 0 sends the user back
         for obj in Order_LIST:
             print("*******************")
             print("Order No: ", obj.OrderNo)
-            print("ID: ", obj.ID)
+            print("ID: ", obj.ID)  # This will display all the information on the current ticket
             print("Name: ", obj.Name)
             print("Description of the request: ", obj.Problem)
             print("Ticket Status: ", obj.Ticket_STATUS)
@@ -119,19 +119,19 @@ while OPTION_FLAG != 0:  # Option 0 sends the user back
 
     elif option == 3:
         print("Please enter the ticket number to respond: ")
-        USER_IN_Order_NO = int(input())
+        USER_IN_Order_NO = int(input())  # This will open up a current ticket in use, requesting a ticket number
 
         for obj in Order_LIST:
             if obj.OrderNo == USER_IN_Order_NO:
                 print("Please enter the response for the ticket No: ", obj.OrderNo)
                 RESPONSE_INPUT = input()
-                obj.Response = RESPONSE_INPUT
-                obj.Ticket_STATUS = "Closed"
+                obj.Response = RESPONSE_INPUT  # This will be activated once the user has entered a response
+                obj.Ticket_STATUS = "Closed"  # After the response has been given the ticket status will close
 
     elif option == 4:
         print("Please enter the ticket number to reopen: ")
         USER_IN_Order_NO = int(input())
-
+        # This will re open an exiting ticket that you can edit again
         for obj in Order_LIST:
             if obj.OrderNo == USER_IN_Order_NO:
                 if obj.Ticket_STATUS == "Closed":
@@ -157,7 +157,7 @@ while OPTION_FLAG != 0:  # Option 0 sends the user back
 
     else:
         OPTION_FLAG = 0
-        print("Exiting, thank you have a great day...")
+        print("Exiting, thank you have a great day...") #This will exit the program
         os._exit(0)
 
 """Test case: Testing that making a new account will work
@@ -204,7 +204,7 @@ expected output: should ask the user to enter their response
 actual output: Requires the user to enter a response and will print Completed under the response section in the ticket
 result pass"""
 
-"""Test case: Testing to see if i can reopen and exsisting request
+"""Test case: Testing to see if i can reopen and existing request
 input: 4
 expected output: Re open up the existing request
 actual output: Re opens up the existing request
