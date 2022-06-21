@@ -11,7 +11,7 @@ class Helper_Func(object):
         print("Order No: ", obj.OrderNo)  # Pulling the variable made from Ticket.py
         print("Name: ", obj.Name)
         print("ID: ", obj.ID)
-        print("Email: ", obj.Name, "@Whitecliffe.co.nz")
+        print("Email: ", obj.Name, "@Whitecliffe.co.nz") # Used the Name object to
         print("Description of the issue: ", obj.Problem)
         print("Order Status: ", obj.Ticket_STATUS)
 

@@ -3,8 +3,8 @@ import os
 import Ticket
 from Ticket import Create_Ticket
 
-import Test
-from Test import Helper_Func
+import Menu
+from Menu import Helper_Func
 
 
 def Welcome():  # Sign in options
@@ -16,6 +16,7 @@ def Welcome():  # Sign in options
             username = input("Enter a username :")
             print()
             password = input("Enter a password :")
+            '''This section is the sign in process which will ask the user if they have an account.'''
             print()
             password1 = input("Confirm password :")
             if password == password1:
@@ -32,6 +33,8 @@ def Welcome():  # Sign in options
             print()
             login2 = input("Password: ")
             file = open(login1 + ".txt", "r")
+            '''If the user does have an account then this part of the code will run and the user will be asked
+            to log in and sign in with their password'''
             data = file.readline()
             file.close()
             if data == login1 + ":" + login2:
@@ -43,7 +46,8 @@ def Welcome():  # Sign in options
         while True:
             username = input("Enter your username :")
             print()
-            password = input("Enter a password :")
+            password = input("Enter a new password :")
+            '''This section will tell the user to enter their username and a new passwords'''
             print()
             password1 = input("Confirm password :")
             if password == password1:
@@ -55,6 +59,7 @@ def Welcome():  # Sign in options
             print("Passwords do NOT match!")
 
 
+Welcome()
 
 Order_LIST = []
 CREATE_FLAG = 1
@@ -66,7 +71,7 @@ while OPTION_FLAG != 0:  # Option 0 sends the user back
     if option == 1:
         while (CREATE_FLAG == 1):
             print("Please input Staff Name and press enter")
-            ID = input()
+            ID = input()  # This section will need the user to enter a character or characters
             print("Please input the description and press enter")
             print("[If you require a ID number, input 'id' and press enter]")
             print("[If you require a new password please input 'c' and press enter]")
@@ -74,16 +79,16 @@ while OPTION_FLAG != 0:  # Option 0 sends the user back
             print("Please input your Name (optional) and press enter")
             Name = input()
 
-            if Name == "":
+            if Name == "":  # If the user does not enter a name the end will result in Not specified
                 Name = "Not specified"
 
             Order = Create_Ticket(ID, Name, Order_Desc)
 
-            if "id" in Order.Problem:
+            if "id" in Order.Problem:  # This will give the user their new id number with hexadecimal and binary
                 Order = Helper_Func.UniqueToken(Order)
                 Helper_Func.Ticket_Iformation(Order)
                 Order_LIST.append(Order)
-            elif "c" in Order.Problem:
+            elif "c" in Order.Problem:  # Sends the user to the password reset
                 Order = Helper_Func.UniqueToken(Order)
                 Helper_Func.Ticket_Iformation(Order)
                 Order_LIST.append(Order)
@@ -94,10 +99,9 @@ while OPTION_FLAG != 0:  # Option 0 sends the user back
             else:
                 Order_LIST.append(Order)
 
-
             print("Do you want to create another request? (Y/N)")
             user_in = input()
-            if user_in == "N" or user_in == "n":
+            if user_in == "N" or user_in == "n":  # This will appear when trhe user has completed a new ticket
                 CREATE_FLAG = 0
 
     elif option == 2:
@@ -155,3 +159,65 @@ while OPTION_FLAG != 0:  # Option 0 sends the user back
         OPTION_FLAG = 0
         print("Exiting, thank you have a great day...")
         os._exit(0)
+
+"""Test case: Testing that making a new account will work
+input: Tim
+input: 123
+expected output: Expected to store the username and password
+actual output: Creates a new file to save username and passwords
+result pass"""
+
+"""Test case: Testing to see if i can enter a random name
+input: Timmy
+input: 1
+expected output: Should crash
+actual output: Does crash which is good
+result pass"""
+
+"""Test case: Testing the change password feature
+input: '1'create a request
+input: 'Tim' Staff name
+input: 'c' Change password
+input: 'Tim' enter username
+input: '1' Enter a new password
+input: '1' Confirm password
+expected output: Should overwrite current password
+actual output: Overwrites current password
+result pass"""
+
+"""Test case: Testing to see if programme ends
+input: 0
+expected output: should exit
+actual output: Exits 
+result pass"""
+
+"""Test case: See if the input 2 will display the current ticket 
+input: 2
+expected output: Prints out ticket information
+actual output: Prints out ticket information
+result pass"""
+
+"""Test case: Testing response function
+input: 3
+input: Completed
+expected output: should ask the user to enter their response
+actual output: Requires the user to enter a response and will print Completed under the response section in the ticket
+result pass"""
+
+"""Test case: Testing to see if i can reopen and exsisting request
+input: 4
+expected output: Re open up the existing request
+actual output: Re opens up the existing request
+result pass"""
+
+"""Test case: Testing to see if 5 input works 
+input: 5
+expected output: should display how many tickets have been created , finished and remaining tickets 
+actual output: Displays all information 
+result pass"""
+
+"""Test case: Testing to what happens when i enter a random character
+input: 1
+expected output: should crash because it does not have knowledge of this charter
+actual output: continues onto the next stage just this the user dose not have a username or password 
+result failed"""
