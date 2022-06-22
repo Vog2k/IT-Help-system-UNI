@@ -29,7 +29,7 @@ class Helper_Func(object):
         Order.Response = "Your ID is: " + HEX_Token
 
         if Order.Ticket_STATUS == "Closed":
-            Order.Ticket_STATUS = "Reopened"
+            Order.Ticket_STATUS = "Reopened"   #Displays while finishing a ticket
         elif Order.Ticket_STATUS == "Open":
             Order.Ticket_STATUS = "Closed"
 
@@ -41,9 +41,9 @@ class Helper_Func(object):
         print("0. Exit")
         print("1. Create an request")
         print("2. Display requests")
-        print("3. Respond to an existing request")  # Main menu alowing 6 options
+        print("3. Respond to an existing request")  # Main menu allowing 6 options
         print("4. Reopen to an existing request")
         print("5. Display ticket stats")
         print("------------------------\n")
-        option = int(input("Enter the option number here: "))
+        option = int(input("Enter the option number here: "))  # User input their number in this line
         return option

@@ -1,0 +1,108 @@
+Reflective writing
+
+Having been just over a month of learning python i have gained tons of knowledge over the past month i had recently used
+python to build a tetis game just to get my feet wet, But while roughly learning python i had very little understanding
+of classes and why we use 'Def' up until now i fully understand what classes do and why we use 'Def'.
+
+Classes / OOP
+Learning about classes was the hardest part for me, when using the self method this made me feel so lost and confused for
+hours until i finally realised what the actual use of classes does, Creating a class creates a new object which allows me to use
+new instances, Each class that i create can have a attribute.
+
+While studying OOP i had come to realise what purpose classes had and how much this can clean's up your code.
+I originally had used up multiple lines just copying and pasting my code to use for other things so using classes
+and OOP made my code so much cleaner.
+
+User stories
+
+When a user requests a password change, I have designed my password system to recognise this request and to write over
+the current password using """"file = open(username + ".txt", "w"""" This will assign the newly created password to that
+current users name . This will then send the user to the login stage once the have  signed in with the new password they
+can opt for another ticket or decline and carry on with other options
+
+When a user request an ID number there has been a system set up in place, I have used Nidhi's code and from what i have
+leaned, Once the user enters the characters 'id' The code will run to produce the id under the binary and hexadecimal
+but also using the first characters of the users name. Once this has been completed the ticket will be created and
+closed then allowing the user to create another ticket or continue back to the menu
+
+
+
+
+
+-----------------------SDLC------------------------------
+
+I have chosen to go with the Waterfall model
+
+below will basically show you why this is in my opinion the best model to go with. Having one operation finished first is
+gold for me as i believe that my team should focus 100% on one part of the application first Bruce Lee Quote
+I fear not the man who has practiced 10,000 kicks once, but I fear the man who has practiced one kick 10,000 times. This
+is the same for me i want my team to perfect one thing at a time before moving on to the next. In context once my team has
+perfected the planning phase and i sign off on that then i will allow the next phase to start which is requirements and
+so on. Even though this is time restricted i would rather have my team focused on one thing at a time
+
+---Planning & requirements---
+
+Planning will consist of 'User registration', 'Login', Logout, 'Main menu', 'Password changes'
+
+---Requirement Analysis---
+
+'User registration' .This will consist of an account login phase asking the user if they have an
+current account. Using the characters y/n once the user has entered 'n' the user will then be asked to input their
+information and a password.
+
+'Login' .Once Registration has been completed the user will be asked again to enter y/n once they have entered 'y' the user
+will then be asked to input their username first then after this the user will be asked to input their current password
+that they have just made. once completed the user will be then sent to the main menu
+
+'Login'.When the user wants to logout they just have to enter the number '0' this will then exit the whole application
+
+'Main menu'. This will consist of 6 choices, '0' being to exit application. '1' create a new ticket. '2' Will be to
+display the current ticket the user has requested '3' will be where a IT technician can edit the current request. '4'
+will be where the IT technician can reopen an existing request. '5'This will display all tickets created, reopened and
+closed
+
+'Password changes' Once the user requests to change their password they will be taken to the start menu again and asked
+to enter the character 'c' As the user enters int 'c' they will then be prompted to enter their username and once that
+has been achieved they can then change their password
+
+---Design---
+
+While being limited to the terminal i have decided to add dashes '------' astrix '*' under important areas of the code
+for example when the user logs in the will be presented with 6 options and above and below is dashes '-----' which
+separates the code and makes it much easier to read. While designing the options it was best to make the program print
+downwards instead of all bunched up together. I have tried to make the terminal look less cluttered and more easier to
+read and understand, i have only used file to store the username and password.This application will be able to communicate with most
+company system as long as the company has 1 working computer and functioning keyboard mouse and monitor. The only security
+in this program is the password management if the user gets the password wrong the program will want you to enter in the
+correct password and that goes for the username aswell
+
+---Implementation---
+Creating this code we will be using python this will make it much more easier for the users to understand and our
+developers find it less complicated while using this language. Using python will insure the developers to use OOP this
+will decrease work load for them and clean up the back-end code. There will be a set of two developers working on
+creating this code one dev will work on Tickets  while the other will focus on implementing passwords and design the
+main menu while working on this code they must allways supply their workings in a reflective journal and write comments
+this will keep the developers upto date also incase the need to update and patch recent bugs
+
+---Testing---
+
+It’s critical to test an application before making it available to users. This will draw out any possible bugs the
+program may have and what bugs they find hidden. This is basically the testers destroying your code and diminishing anything
+the developers didn't see, This also leads to the developers fixing the bug asap, while the testers can go through the
+code they take note of how they got to this point and how the bug is found for example right now if you press a random
+character in the program you will be taken straight into the main menu the downfall being that user does not have a
+username. I have left this bug in so the user can sign in anomalously
+
+---Deployment---
+Once the program has been deployed the company using this program will need to have up to-date software and malware to
+be able to run this program without any issues,also will need a computer with functioning Window 10 and install the
+program on WWW.ITHELPDESK.COM Once download has been completed the user can instantly log in
+
+---Maintenance---
+
+Getting help from the users. The program has been designed so that the IT team can help you if the user is to run into
+a bug in this system the IT team would like the user to report it back so that they can improve the program and update
+and help supply the user with the best possible service and experience with our system. Once the IT team has seen the bug
+the IT team will report it back to the developers and the under go more coding to fix this problem once completed testers
+will continue to wear out any other loose ends the current bug might have. Once this has been patched the program will
+continue as normal.

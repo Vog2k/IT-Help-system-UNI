@@ -1,8 +1,11 @@
+# Timothy L
+# Nidhi's work commented and added password
+
 import os
 
 import Ticket
 from Ticket import Create_Ticket
-
+# These two line above and below import data from other pages
 import Menu
 from Menu import Helper_Func
 
@@ -18,11 +21,13 @@ def Welcome():  # Sign in options
             password = input("Enter a password :")
             '''This section is the sign in process which will ask the user if they have an account.'''
             print()
+            # Using the file. method I have designed the user to sign in and for the program to write and
+            # create a new profile
             password1 = input("Confirm password :")
             if password == password1:
-                file = open(username + ".txt", "w")
+                file = open(username + ".txt", "w")  # Writes to a flie
                 file.write(username + ":" + password)
-                file.close()
+                file.close()  # Close the file so nothing leaks by accident
                 welcome = "y"
                 break
             print("Passwords do NOT match!")
@@ -32,12 +37,12 @@ def Welcome():  # Sign in options
             login1 = input("Login: ")
             print()
             login2 = input("Password: ")
-            file = open(login1 + ".txt", "r")
+            file = open(login1 + ".txt", "r")  # This line will read the user and the password
             '''If the user does have an account then this part of the code will run and the user will be asked
             to log in and sign in with their password'''
             data = file.readline()
             file.close()
-            if data == login1 + ":" + login2:
+            if data == login1 + ":" + login2:  # This line will determine if the password and user are correct
                 print("Welcome", " " + login1)
                 break
             print("Incorrect username or password.")
@@ -157,7 +162,7 @@ while OPTION_FLAG != 0:  # Option 0 sends the user back
 
     else:
         OPTION_FLAG = 0
-        print("Exiting, thank you have a great day...") #This will exit the program
+        print("Exiting, thank you have a great day...")  # This will exit the program
         os._exit(0)
 
 """Test case: Testing that making a new account will work
